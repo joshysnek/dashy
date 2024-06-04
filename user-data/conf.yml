@@ -1,13 +1,8 @@
 ---
 # Page meta info, like heading, footer text and nav links
 pageInfo:
-  title: Dashy
-  description: Welcome to your new dashboard!
-  navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
-  - title: Documentation
-    path: https://dashy.to/docs
+  title: System Panel
+  description: Resource Usage Monitoring
 
 # Optional app settings and configuration
 appConfig:
@@ -15,33 +10,77 @@ appConfig:
 
 # Main content - An array of sections, each containing an array of items
 sections:
-- name: Getting Started
-  icon: fas fa-rocket
-  items:
-  - title: Dashy Live
-    description: Development a project management links for Dashy
-    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-    url: https://live.dashy.to/
-    target: newtab
-  - title: GitHub
-    description: Source Code, Issues and Pull Requests
-    url: https://github.com/lissy93/dashy
-    icon: favicon
-  - title: Docs
-    description: Configuring & Usage Documentation
-    provider: Dashy.to
-    icon: far fa-book
-    url: https://dashy.to/docs
-  - title: Showcase
-    description: See how others are using Dashy
-    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-    icon: far fa-grin-hearts
-  - title: Config Guide
-    description: See full list of configuration options
-    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
-    icon: fas fa-wrench
-  - title: Support
-    description: Get help with Dashy, raise a bug, or get in contact
-    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-    icon: far fa-hands-helping
-  
+- name: CPU Usage
+  icon: fas fa-tachometer
+  displayData:
+    rows: 2
+  widgets:
+  - type: gl-current-cpu
+    options:
+      hostname: http://192.168.130.2:61208
+  - type: gl-current-cores
+    options:
+      hostname: http://192.168.130.2:61208
+
+- name: CPU History
+  icon: fas fa-microchip
+  displayData:
+    cols: 2
+  widgets:
+  - type: gl-cpu-history
+    options:
+      hostname: http://192.168.130.2:61208
+      limit: 60
+
+- name: Disk Space
+  icon: fas fa-hdd
+  widgets:
+  - type: gl-disk-space
+    options:
+      hostname: http://192.168.130.2:61208
+
+- name: Network Interfaces
+  icon: fas fa-ethernet
+  widgets:
+  - type: gl-network-interfaces
+    options:
+      hostname: http://192.168.130.2:61208
+      limit: 500
+      
+- name: Network Activity
+  icon: fas fa-exchange
+  displayData:
+    cols: 2
+  widgets:
+  - type: gl-network-activity
+    options:
+      hostname: http://192.168.130.2:61208
+      limit: 500
+      
+- name: Disk IO
+  icon: fas fa-disc-drive
+  widgets:
+  - type: gl-disk-io
+    options:
+      hostname: http://192.168.130.2:61208
+       
+- name: Memory Usage
+  icon: fas fa-memory
+  widgets:
+  - type: gl-current-mem
+    options:
+      hostname: http://192.168.130.2:61208
+      
+- name: System Load
+  icon: fas fa-tasks-alt
+  widgets:
+  - type: gl-system-load
+    options:
+      hostname: http://192.168.130.2:61208
+
+- name: System Alerts
+  icon: fas fa-sensor-alert
+  widgets:
+  - type: gl-alerts
+    options:
+      hostname: http://192.168.130.2:61208
