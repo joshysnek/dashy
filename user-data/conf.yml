@@ -1,86 +1,104 @@
----
-# Page meta info, like heading, footer text and nav links
 pageInfo:
-  title: System Panel
-  description: Resource Usage Monitoring
-
-# Optional app settings and configuration
+  title: Dashy
+  description: Welcome to the dash dawgy..
+  navLinks:
+    - title: Github
+      path: https://github.com/joshysnek
+      target: newtab
+  footerText: ''
 appConfig:
   theme: colorful
-
-# Main content - An array of sections, each containing an array of items
+  layout: auto
+  iconSize: medium
+  language: en
 sections:
-- name: CPU Usage
-  icon: fas fa-tachometer
-  displayData:
-    rows: 2
-  widgets:
-  - type: gl-current-cpu
-    options:
-      hostname: http://192.168.130.2:61208
-  - type: gl-current-cores
-    options:
-      hostname: http://192.168.130.2:61208
-
-- name: CPU History
-  icon: fas fa-microchip
-  displayData:
-    cols: 2
-  widgets:
-  - type: gl-cpu-history
-    options:
-      hostname: http://192.168.130.2:61208
-      limit: 60
-
-- name: Disk Space
-  icon: fas fa-hdd
-  widgets:
-  - type: gl-disk-space
-    options:
-      hostname: http://192.168.130.2:61208
-
-- name: Network Interfaces
-  icon: fas fa-ethernet
-  widgets:
-  - type: gl-network-interfaces
-    options:
-      hostname: http://192.168.130.2:61208
-      limit: 500
-      
-- name: Network Activity
-  icon: fas fa-exchange
-  displayData:
-    cols: 2
-  widgets:
-  - type: gl-network-activity
-    options:
-      hostname: http://192.168.130.2:61208
-      limit: 500
-      
-- name: Disk IO
-  icon: fas fa-disc-drive
-  widgets:
-  - type: gl-disk-io
-    options:
-      hostname: http://192.168.130.2:61208
-       
-- name: Memory Usage
-  icon: fas fa-memory
-  widgets:
-  - type: gl-current-mem
-    options:
-      hostname: http://192.168.130.2:61208
-      
-- name: System Load
-  icon: fas fa-tasks-alt
-  widgets:
-  - type: gl-system-load
-    options:
-      hostname: http://192.168.130.2:61208
-
-- name: System Alerts
-  icon: fas fa-sensor-alert
-  widgets:
-  - type: gl-alerts
-    options:
-      hostname: http://192.168.130.2:61208
+  - name: Backends
+    icon: fas fa-rocket
+    items:
+      - title: Prowlarr
+        description: Prowlarr Link
+        icon: >-
+          https://static-00.iconduck.com/assets.00/prowlarr-icon-1024x1024-vyf0hy1t.png
+        url: https://prowlarr.bigbackend.lol/
+        target: newtab
+        statusCheck: true
+        id: 0_795_prowlarr
+      - title: Lidarr
+        description: Source Code, Issues and Pull Requests
+        icon: https://lidarr.bigbackend.lol/Content/Images/logo.svg
+        url: https://lidarr.bigbackend.lol
+        target: newtab
+        statusCheck: true
+        id: 1_795_lidarr
+      - title: NZBGet
+        description: NzbGet
+        icon: https://avatars2.githubusercontent.com/u/3368377?s=280&v=4
+        url: https://nzb.bigbackend.lol/
+        target: newtab
+        statusCheck: true
+        id: 2_795_nzbget
+      - title: Showcase
+        description: See how others are using Dashy
+        url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
+        icon: far fa-grin-hearts
+        id: 3_795_showcase
+      - title: Config Guide
+        description: See full list of configuration options
+        url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
+        icon: fas fa-wrench
+        id: 4_795_configguide
+      - title: Support
+        description: Get help with Dashy, raise a bug, or get in contact
+        url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
+        icon: far fa-hands-helping
+        id: 5_795_support
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+  - name: Quick Access
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: DigitalOcean
+        description: DigitalOcean Cloud
+        icon: favicon
+        url: https://cloud.digitalocean.com/
+        target: newtab
+        id: 0_1135_digitalocean
+      - title: Netlify
+        icon: favicon
+        url: https://app.netlify.com
+        target: newtab
+        id: 1_1135_netlify
+      - title: Scaleway
+        icon: favicon
+        url: https://console.scaleway.com
+        target: newtab
+        id: 2_1135_scaleway
+      - title: CF One
+        icon: favicon
+        url: https://one.dash.cloudflare.com/
+        target: newtab
+        id: 3_1135_cfone
+      - title: CF Dash
+        icon: favicon
+        url: https://dash.cloudflare.com/
+        target: newtab
+        id: 4_1135_cfdash
+      - title: Heroku
+        icon: favicon
+        url: https://dashboard.heroku.com/
+        target: newtab
+        id: 5_1135_heroku
+      - title: NextDNS
+        icon: favicon
+        url: https://my.nextdns.io/
+        target: newtab
+        id: 6_1135_nextdns
